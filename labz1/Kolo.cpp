@@ -1,8 +1,8 @@
 #include "Kolo.hpp"
 #include <cmath>
 #include <iostream>
-#include <ostream>
 #include <numbers>
+#include <ostream>
 
 Kolo::Kolo(double r) : r(r) {
     std::cout << "Konstruktor Kola o promieniu: " << r << std::endl;
@@ -18,8 +18,7 @@ void Kolo::SetR(double r) {
 }
 
 double Kolo::Obwod() const {
-    return 2*std::numbers::pi*r;
-
+    return 2 * std::numbers::pi * r;
 }
 
 double Kolo::Pole() const {
