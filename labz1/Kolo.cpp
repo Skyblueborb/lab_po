@@ -1,11 +1,15 @@
 #include "Kolo.hpp"
-#include <cmath>
 #include <iostream>
 #include <numbers>
 #include <ostream>
 
 Kolo::Kolo(double r) : r(r) {
     std::cout << "Konstruktor Kola o promieniu: " << r << std::endl;
+}
+
+Kolo::Kolo(double r, bool overload) : r(r) {
+    std::cout << "Konstruktor Kola o promieniu: " << r << std::endl;
+    if (overload) std::cout << "[OVERLOAD]" << std::endl;
 }
 
 Kolo::~Kolo() {

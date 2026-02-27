@@ -10,6 +10,7 @@ class Kolo : public FiguraPlaska {
         void Wypisz(std::ostream& out) const override;
     public:
         Kolo(double r);
+        Kolo(double r, bool overload);
 
         double GetR() const { return r; };
 
@@ -17,5 +18,5 @@ class Kolo : public FiguraPlaska {
 
         double Obwod() const override;
         double Pole() const override;
-        ~Kolo() override;
+        virtual ~Kolo() override;
 };
