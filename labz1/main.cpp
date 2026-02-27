@@ -1,11 +1,12 @@
 #include <iostream>
 #include "FiguraPlaska.hpp"
 #include "Kolo.hpp"
+#include "Okrag.hpp"
 #include "Prostokat.hpp"
 #include "Trojkat.hpp"
-#include "Okrag.hpp"
 
-#define ENDL(x) for (int i = 0; i < x; ++i) std::cout << std::endl;
+#define ENDL(x) \
+    for (int i = 0; i < x; ++i) std::cout << std::endl;
 
 int main(void) {
     {

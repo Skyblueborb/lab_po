@@ -2,7 +2,6 @@
 #include <iostream>
 #include <ostream>
 
-
 Okrag::Okrag(double r) : Kolo(r) {
     std::cout << "Konstruktor okregu o promieniu: " << r << std::endl;
 };
