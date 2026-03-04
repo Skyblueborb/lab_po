@@ -15,7 +15,7 @@ void Szescian::SetA(double a) {
 }
 
 double Szescian::Pole() const {
-    return 6*pow(a,2);
+    return 6 * pow(a, 2);
 }
 
 double Szescian::O() const {

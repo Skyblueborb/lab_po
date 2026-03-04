@@ -32,7 +32,7 @@ double Trojkat::O() const {
 
 double Trojkat::Pole() const {
     float p = O() / 2;
-    return sqrt(p*(p-a)*(p-b)*(p-c));
+    return sqrt(p * (p - a) * (p - b) * (p - c));
 }
 
 void Trojkat::Wypisz(std::ostream& out) const {

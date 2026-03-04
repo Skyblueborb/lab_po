@@ -12,15 +12,15 @@ Kula::~Kula() {
 }
 
 void Kula::SetR(double r) {
-   this->r = r;
+    this->r = r;
 }
 
 double Kula::Pole() const {
-    return 4*std::numbers::pi*pow(r, 2);
+    return 4 * std::numbers::pi * pow(r, 2);
 }
 
 double Kula::O() const {
-    return double(4)/3 * std::numbers::pi * pow(r, 3);
+    return double(4) / 3 * std::numbers::pi * pow(r, 3);
 }
 
 void Kula::Wypisz(std::ostream& out) const {
