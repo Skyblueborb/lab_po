@@ -16,7 +16,7 @@ class Kolo : public FiguraPlaska {
 
         void SetR(double r);
 
-        double Obwod() const override;
+        double O() const override;
         double Pole() const override;
         virtual ~Kolo() override;
 };

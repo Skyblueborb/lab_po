@@ -18,6 +18,6 @@ double Okrag::Pole() const {
 void Okrag::Wypisz(std::ostream& out) const {
     out << "Okrag:" << std::endl;
     out << "- Promien: " << GetR() << std::endl;
-    out << "- Obwod: " << Obwod() << std::endl;
+    out << "- O: " << O() << std::endl;
     out << "- Pole: " << Pole() << std::endl;
 }

@@ -26,12 +26,12 @@ void Trojkat::SetC(double c) {
     this->c = c;
 }
 
-double Trojkat::Obwod() const {
+double Trojkat::O() const {
     return GetA() + GetB() + GetC();
 }
 
 double Trojkat::Pole() const {
-    float p = Obwod() / 2;
+    float p = O() / 2;
     return sqrt(p*(p-a)*(p-b)*(p-c));
 }
 
@@ -40,6 +40,6 @@ void Trojkat::Wypisz(std::ostream& out) const {
     out << "- A: " << GetA() << std::endl;
     out << "- B: " << GetB() << std::endl;
     out << "- C: " << GetC() << std::endl;
-    out << "- Obwod: " << Obwod() << std::endl;
+    out << "- O: " << O() << std::endl;
     out << "- Pole: " << Pole() << std::endl;
 }

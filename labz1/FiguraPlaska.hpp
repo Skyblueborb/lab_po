@@ -3,6 +3,6 @@
 
 class FiguraPlaska : public Figura {
     public:
-        virtual double Obwod() const = 0;
+        virtual double O() const = 0;
         virtual ~FiguraPlaska() {};
 };

@@ -20,7 +20,7 @@ void Prostokat::SetB(double b) {
     this->b = b;
 }
 
-double Prostokat::Obwod() const {
+double Prostokat::O() const {
     return GetA() * 2 + GetB() * 2;
 }
 
@@ -32,6 +32,6 @@ void Prostokat::Wypisz(std::ostream& out) const {
     out << "Prostokat:" << std::endl;
     out << "- A: " << GetA() << std::endl;
     out << "- B: " << GetB() << std::endl;
-    out << "- Obwod: " << Obwod() << std::endl;
+    out << "- O: " << O() << std::endl;
     out << "- Pole: " << Pole() << std::endl;
 }

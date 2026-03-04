@@ -11,7 +11,7 @@ class Kula : public Figura3D {
         void SetR(double r);
 
         double Pole() const override;
-        double Objetosc() const override;
+        double O() const override;
 
         virtual ~Kula() override;
 };

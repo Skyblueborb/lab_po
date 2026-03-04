@@ -17,7 +17,7 @@ class Prostokat : public FiguraPlaska {
         void SetA(double a);
         void SetB(double b);
 
-        double Obwod() const override;
+        double O() const override;
         double Pole() const override;
         ~Prostokat() override;
 };

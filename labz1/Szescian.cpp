@@ -18,7 +18,7 @@ double Szescian::Pole() const {
     return 6*pow(a,2);
 }
 
-double Szescian::Objetosc() const {
+double Szescian::O() const {
     return a;
 }
 
@@ -26,5 +26,5 @@ void Szescian::Wypisz(std::ostream& out) const {
     out << "Szescian:" << std::endl;
     out << "- A: " << GetA() << std::endl;
     out << "- Pole: " << Pole() << std::endl;
-    out << "- Objetosc: " << Objetosc() << std::endl;
+    out << "- O: " << O() << std::endl;
 }

@@ -21,7 +21,7 @@ void Kolo::SetR(double r) {
     this->r = r;
 }
 
-double Kolo::Obwod() const {
+double Kolo::O() const {
     return 2 * std::numbers::pi * r;
 }
 
@@ -32,6 +32,6 @@ double Kolo::Pole() const {
 void Kolo::Wypisz(std::ostream& out) const {
     out << "Kolo:" << std::endl;
     out << "- Promien: " << GetR() << std::endl;
-    out << "- Obwod: " << Obwod() << std::endl;
+    out << "- O: " << O() << std::endl;
     out << "- Pole: " << Pole() << std::endl;
 }

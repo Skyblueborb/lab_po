@@ -19,7 +19,7 @@ class Trojkat : public FiguraPlaska {
         void SetB(double b);
         void SetC(double c);
 
-        double Obwod() const override;
+        double O() const override;
         double Pole() const override;
         ~Trojkat() override;
 };

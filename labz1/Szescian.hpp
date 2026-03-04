@@ -12,7 +12,7 @@ class Szescian : public Figura3D {
         void SetA(double a);
 
         double Pole() const override;
-        double Objetosc() const override;
+        double O() const override;
 
         virtual ~Szescian() override;
 };
