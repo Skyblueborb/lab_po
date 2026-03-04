@@ -1,4 +1,5 @@
 #include "Trojkat.hpp"
+#include <cmath>
 #include <iostream>
 #include <ostream>
 
@@ -30,7 +31,8 @@ double Trojkat::Obwod() const {
 }
 
 double Trojkat::Pole() const {
-    return (GetA() + GetB()) * GetC() / 2;
+    float p = Obwod() / 2;
+    return sqrt(p*(p-a)*(p-b)*(p-c));
 }
 
 void Trojkat::Wypisz(std::ostream& out) const {

@@ -4,6 +4,8 @@
 #include "Okrag.hpp"
 #include "Prostokat.hpp"
 #include "Trojkat.hpp"
+#include "Kula.hpp"
+#include "Szescian.hpp"
 
 #define ENDL(x) \
     for (int i = 0; i < x; ++i) std::cout << std::endl;
@@ -47,6 +49,18 @@ int main(void) {
         Okrag okrag(3);
 
         std::cout << okrag << std::endl;
+    }
+    ENDL(4);
+    {
+        Kula kul(5);
+
+        std::cout << kul << std::endl;
+    }
+    ENDL(4);
+    {
+        Szescian s(6);
+
+        std::cout << s << std::endl;
     }
     return 0;
 }
