@@ -4,29 +4,33 @@
 #include <string>
 #include <utility>
 
-Book::Book() : author(""), title("") {
-    std::cout << "Book()" << std::endl;
-};
+Book::Book()
+    : author(""), title("") {
+          // std::cout << "Book()" << std::endl;
+      };
 
-Book::Book(const std::string& author, const std::string& title) : author(author), title(title) {
-    std::cout << "Book(const string&, const string&)" << std::endl;
-};
+Book::Book(const std::string& author, const std::string& title)
+    : author(author), title(title) {
+          // std::cout << "Book(const string&, const string&)" << std::endl;
+      };
 
 Book::Book(std::string&& author, std::string&& title)
     : author(std::move(author)), title(std::move(title)) {
-    std::cout << "Book(string&&, string&&)" << std::endl;
-};
+          // std::cout << "Book(string&&, string&&)" << std::endl;
+      };
 
-Book::Book(const Book& other) : author(other.author), title(other.title) {
-    std::cout << "Book(const Book&)" << std::endl;
-};
+Book::Book(const Book& other)
+    : author(other.author), title(other.title) {
+          // std::cout << "Book(const Book&)" << std::endl;
+      };
 
-Book::Book(Book&& other) : author(std::move(other.author)), title(std::move(other.title)) {
-    std::cout << "Book(Book&&)" << std::endl;
-};
+Book::Book(Book&& other)
+    : author(std::move(other.author)), title(std::move(other.title)) {
+
+      };
 
 Book& Book::operator=(const Book& other) {
-    std::cout << "operator=(const Book&)" << std::endl;
+    // std::cout << "operator=(const Book&)" << std::endl;
     if (this != &other) {
         author = other.author;
         title = other.title;
@@ -35,7 +39,7 @@ Book& Book::operator=(const Book& other) {
 }
 
 Book& Book::operator=(Book&& other) {
-    std::cout << "operator=(Book&&)" << std::endl;
+    // std::cout << "operator=(Book&&)" << std::endl;
     if (this != &other) {
         author = std::move(other.author);
         title = std::move(other.title);
