@@ -1,36 +1,40 @@
 package pl.edu.pg.eti.ksg.po.lab1.transformacje;
 
 public class Punkt {
-    private final double x, y;
+    private final double r, alpha;
 
-    public Punkt(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public Punkt(double r, double alpha) {
+        this.r = r;
+        this.alpha = alpha;
     }
 
-    public double getX() { return x; }
+    public double getR() { return r; }
 
-    public double getY() { return y; }
+    public double getAlpha() { return alpha; }
+
+    // @Override
+    // public boolean equals(Object obj) {
+    //     if (obj instanceof Punkt other) {
+    //         return this.alpha == other.alpha;
+    //     }
+    //     return false;
+    // }
 
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Punkt other) {
-            return this.x == other.x && this.y == other.y;
+            return (this.alpha == other.alpha) && (this.r == other.r);
         }
         return false;
     }
 
     @Override
     public int hashCode() {
-        return 67 * Double.hashCode(x) + 19 * Double.hashCode(y);
+        return 67 * Double.hashCode(r) + 19 * Double.hashCode(alpha);
     }
 
     @Override
     public String toString() {
-        return "(" + x + ", " + y + ")";
+        return "PUNKT(Promien: " + this.r + " Kat: " + this.alpha + ")";
     }
-
-    public static final Punkt O = new Punkt(0, 0);
-    public static final Punkt E_X = new Punkt(1, 0);
-    public static final Punkt E_Y = new Punkt(0, 1);
 }

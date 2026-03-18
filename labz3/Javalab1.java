@@ -1,11 +1,11 @@
 package pl.edu.pg.eti.ksg.po.lab1;
-import pl.edu.pg.eti.ksg.po.lab1.transformacje.Translacja;
 import pl.edu.pg.eti.ksg.po.lab1.transformacje.Skalowanie;
 import pl.edu.pg.eti.ksg.po.lab1.transformacje.BrakTransformacjiOdwrotnejException;
 import pl.edu.pg.eti.ksg.po.lab1.transformacje.Punkt;
 import pl.edu.pg.eti.ksg.po.lab1.transformacje.Transformacja;
 import pl.edu.pg.eti.ksg.po.lab1.transformacje.Obrot;
 import pl.edu.pg.eti.ksg.po.lab1.transformacje.ZlozenieTransformacji;
+import pl.edu.pg.eti.ksg.po.lab1.transformacje.Symetria;
 
 // public class Javalab1 {
 //     public static void main(String[] args) {
@@ -141,25 +141,34 @@ import pl.edu.pg.eti.ksg.po.lab1.transformacje.ZlozenieTransformacji;
 public class Javalab1 {
     public static void main(String[] args) {
         try {
-            Punkt p_start = new Punkt(2, 2);
-            System.out.println("Punkt startowy złożenia: " + p_start);
+            Punkt p_start = new Punkt(2, Math.PI / 2);
 
             Transformacja[] tab = new Transformacja[4];
-            tab[0] = new Translacja(3, 3);
-            tab[1] = new Skalowanie(2, 0.5);
-            tab[2] = new Translacja(4, 6);
-            tab[3] = new Skalowanie(6, 7);
+            tab[0] = new Skalowanie(0);
+            tab[1] = new Symetria(true);
+            tab[2] = new Symetria(false);
+            tab[3] = new Obrot(Math.PI / 2);
 
             Transformacja zlozenie = new ZlozenieTransformacji(tab);
-
-            Punkt p_wynik = zlozenie.transformuj(p_start);
-            System.out.println("Po złożeniu: " + p_wynik);
-
             Transformacja zlozenieOdwrotne = zlozenie.getTransformacjaOdwrotna();
-            Punkt p_wroc = zlozenieOdwrotne.transformuj(p_wynik);
-            System.out.println("Punkt po powrocie: " + p_wroc);
+
+            System.out.println(p_start.equals(zlozenieOdwrotne.transformuj(zlozenie.transformuj(p_start))));
         } catch (BrakTransformacjiOdwrotnejException ex) {
             ex.printStackTrace();
         }
     }
 }
+
+// public class Javalab1 {
+//     public static void main(String[] args) {
+//         Punkt p = new Punkt(2, Math.PI / 6);
+//         System.out.println("Punkt startowy: " + p);
+
+//         Transformacja symetriaOX = new Symetria(true);
+//         Punkt wynikOX = symetriaOX.transformuj(p);
+//         System.out.println(symetriaOX + ": " + wynikOX);
+
+//         Punkt powrot = symetriaOX.transformuj(wynikOX);
+//         System.out.println("Powrót z symetrii OX do startu: " + powrot);
+//     }
+// }

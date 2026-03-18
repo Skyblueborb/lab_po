@@ -9,10 +9,9 @@ public class Obrot implements Transformacja {
 
     @Override
     public Punkt transformuj(Punkt p) {
-        double noweX = p.getX() * Math.cos(alfa) - p.getY() * Math.sin(alfa);
-        double noweY = p.getX() * Math.sin(alfa) + p.getY() * Math.cos(alfa);
+        double noweAlpha = (p.getAlpha() + this.alfa)% (2*Math.PI);
 
-        return new Punkt(noweX, noweY);
+        return new Punkt(p.getR(), noweAlpha);
     }
 
     @Override
