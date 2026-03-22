@@ -7,7 +7,10 @@ import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.SymulatorWycieczki;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Uczestnik;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wycieczka;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.Droga;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.GestyLas;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.Las;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.Panorama;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.PrzeprawaPrzezRzeke;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.DrewniaCerkiew;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie.Czlowiek;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie.PrzewodnikStudencki;
@@ -20,7 +23,7 @@ import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie.StudentKSG;
  */
 public class JavaLab2 {
     public static void main(String[] args) {
-        Wycieczka w = doDydiowki();
+        Wycieczka w = polskieGory();
 
         PrzewodnikStudencki przewodnik =
             new PrzewodnikStudencki("Stefan", "Długonogi", Czlowiek.Plec.MEZCZYZNA);
@@ -35,6 +38,21 @@ public class JavaLab2 {
         SymulatorWycieczki symulator = new SymulatorWycieczki(g, w);
 
         symulator.symuluj();
+    }
+
+    public static Wycieczka polskieGory() {
+        Wycieczka ret = new Wycieczka("Polskie Góry");
+        ret.dodajElementWycieczki(new Droga(2.0));
+        ret.dodajElementWycieczki(new Panorama());
+        ret.dodajElementWycieczki(new Las(3.0));
+        ret.dodajElementWycieczki(new Droga(2.0));
+        ret.dodajElementWycieczki(new PrzeprawaPrzezRzeke(1.5));
+        ret.dodajElementWycieczki(new GestyLas(2.0));
+        ret.dodajElementWycieczki(new Droga(3.0));
+        ret.dodajElementWycieczki(new DrewniaCerkiew("Lipnica"));
+        ret.dodajElementWycieczki(new Droga(2.0));
+
+        return ret;
     }
 
     public static Wycieczka doDydiowki() {
