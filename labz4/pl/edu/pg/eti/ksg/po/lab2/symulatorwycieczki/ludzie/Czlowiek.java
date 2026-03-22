@@ -92,6 +92,12 @@ public abstract class Czlowiek implements Uczestnik {
     }
 
     @Override
+    public void reagujNaAtrakcje(Atrakcja a, double czas) {
+        aktualizujZmeczenie(czas);
+        mow("Ciekawe, atrakcja: " + a.getNazwa());
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(imie);
@@ -107,17 +113,13 @@ public abstract class Czlowiek implements Uczestnik {
         for (int i = 0; i < wycieczka.getLiczbaElementowWycieczki(); i++) {
             ElementWycieczki elementWycieczki = wycieczka.getElementWycieczki(i);
             int lp = i + 1;
-            if (elementWycieczki instanceof Wedrowka) {
-                Wedrowka wedrowka = (Wedrowka) elementWycieczki;
+            if (elementWycieczki instanceof Wedrowka wedrowka) {
                 mow(lp + ". Wędrówka: " + wedrowka.getNazwa()
                     + " długość: " + wedrowka.getOdleglosc() + " GOT");
-            }
-            //            else if(elementWycieczki instanceof Atrakcja) {
-            //                Atrakcja atrakcja = (Atrakcja) elementWycieczki;
-            //                mow(lp+". Atrakcja: "+atrakcja.getNazwa() + " spędzimy tam " +
-            //                atrakcja.getWymaganyCzas() + " h");
-            //            }
-            else {
+            } else if (elementWycieczki instanceof Atrakcja atrakcja) {
+                mow(lp + ". Atrakcja: " + atrakcja.getNazwa() + " spędzimy tam "
+                    + atrakcja.getWymaganyCzas() + " h");
+            } else {
                 mow(lp + ". Inny element: " + elementWycieczki.getNazwa());
             }
         }

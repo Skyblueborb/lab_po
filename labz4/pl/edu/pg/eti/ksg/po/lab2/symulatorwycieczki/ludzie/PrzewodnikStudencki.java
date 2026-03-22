@@ -1,6 +1,8 @@
 package pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie;
 
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Atrakcja;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wycieczka;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.DrewniaCerkiew;
 
 /**
  *
@@ -22,26 +24,28 @@ public class PrzewodnikStudencki extends Student {
         return 4;
     }
 
-    //    @Override
-    //    public void reagujNaAtrakcje(Atrakcja a, double czas) {
-    //        if(a instanceof DrewnianaCerkiew) {
-    //            DrewnianaCerkiew cerkiewka = (DrewnianaCerkiew) a;
-    //            mow("To jest drewniana cerkiew w miejcowości " + cerkiewka.getMiejscowosc() + ".
-    //            Wiele taki można spotkać w Beskidach. Po mojej lewej widać wieżę o kontrukcji
-    //            słupowo ramowej ..."); regeneruj(czas);
-    //        }
-    //        else if(a instanceof Panorama) {
-    //            mow("Tutaj mamy bardzo ładny widok na sąsiednie pasmo górskie. Od lewej widzimy
-    //            ..."); regeneruj(czas);
-    //        }
-    //        else if(a instanceof CmentarzZIWojny) {
-    //            CmentarzZIWojny cmentarz = (CmentarzZIWojny) a;
-    //            mow("Tutaj widzimy cmentarz z I Wojny Światowej w miejcowości
-    //            "+cmentarz.getMiejscowosc()+". Takie cmentarze projektował m.in. Dušan
-    //            Jurkovič."); regeneruj(czas);
-    //        }
-    //        else {
-    //            super.reagujNaAtrakcje(a, czas);
-    //        }
-    //    }
+    @Override
+    public void reagujNaAtrakcje(Atrakcja a, double czas) {
+        if (a instanceof DrewniaCerkiew cerkiewka) {
+            mow("To jest drewniana cerkiew w miejscowości " + cerkiewka.getMiejscowosc() + ". "
+                + ("Wiele takich można spotkać w Beskidach. Po mojej lewej widać wieżę o "
+                    + "konstrukcji ")
+                + "słupowo ramowej ...");
+            regeneruj(czas);
+        }
+        //        else if(a instanceof Panorama) {
+        //            mow("Tutaj mamy bardzo ładny widok na sąsiednie pasmo górskie. Od lewej
+        //            widzimy
+        //            ..."); regeneruj(czas);
+        //        }
+        //        else if(a instanceof CmentarzZIWojny) {
+        //            CmentarzZIWojny cmentarz = (CmentarzZIWojny) a;
+        //            mow("Tutaj widzimy cmentarz z I Wojny Światowej w miejcowości
+        //            "+cmentarz.getMiejscowosc()+". Takie cmentarze projektował m.in. Dušan
+        //            Jurkovič."); regeneruj(czas);
+        //        }
+        else {
+            super.reagujNaAtrakcje(a, czas);
+        }
+    }
 }

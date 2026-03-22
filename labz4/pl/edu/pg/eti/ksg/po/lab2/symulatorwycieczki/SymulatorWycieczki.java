@@ -76,6 +76,17 @@ public class SymulatorWycieczki {
                 System.out.println("Wędrówka zajęła grupie " + czas + " h");
                 czasWycieczki += czas;
                 pokonanyDystans += wedrowka.getOdleglosc();
+            } else if (elementWycieczki instanceof Atrakcja atrakcja) {
+                System.out.println("Grupa zwiedzała atrakcję: " + atrakcja.getNazwa());
+
+                double czas = atrakcja.getWymaganyCzas();
+
+                for (Uczestnik u : grupa.getUczestnicy()) {
+                    u.reagujNaAtrakcje(atrakcja, czas);
+                }
+
+                System.out.println("Zwiedzanie atrakcji zajęło grupie " + czas + " h");
+                czasWycieczki += czas;
             }
 
             System.out.println();

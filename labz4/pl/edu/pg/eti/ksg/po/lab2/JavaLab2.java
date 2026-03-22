@@ -8,6 +8,7 @@ import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Uczestnik;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wycieczka;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.Droga;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.Las;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.gory.beskidy.DrewniaCerkiew;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie.Czlowiek;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie.PrzewodnikStudencki;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.ludzie.Student;
@@ -39,7 +40,7 @@ public class JavaLab2 {
     public static Wycieczka doDydiowki() {
         Wycieczka ret = new Wycieczka("Do Dydiówki");
         ret.dodajElementWycieczki(new Droga(1.0));
-        //        ret.dodajElementWycieczki(new DrewnianaCerkiew("Smolnik"));
+        ret.dodajElementWycieczki(new DrewniaCerkiew("Smolnik"));
         ret.dodajElementWycieczki(new Droga(4.0));
         //        ret.dodajElementWycieczki(new PrzeprawaPrzezRzeke(1.0));
         //        ret.dodajElementWycieczki(new GestyLas(2.0));
