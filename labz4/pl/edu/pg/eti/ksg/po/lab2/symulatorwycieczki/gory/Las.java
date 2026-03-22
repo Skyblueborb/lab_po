@@ -6,8 +6,7 @@ import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wedrowka;
  * Przejscie na przełaj przez las
  * @author TB
  */
-public class Las extends Wedrowka{
-
+public class Las extends Wedrowka {
     public Las(double odleglosc) {
         super(odleglosc);
     }
@@ -26,6 +25,4 @@ public class Las extends Wedrowka{
     public String getNazwa() {
         return "Las";
     }
-    
-    
 }

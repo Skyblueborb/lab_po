@@ -8,7 +8,7 @@ all: compile
 format:
 	@if [ -n "$(SOURCES)" ]; then \
 		echo "Formatting $(words $(SOURCES)) Java files..."; \
-		clang-format -i --style="{Language: Java, BasedOnStyle: Google}" $(SOURCES); \
+		clang-format -i --style=file $(SOURCES); \
 		echo "Formatting complete."; \
 	else \
 		echo "No Java files found to format."; \
