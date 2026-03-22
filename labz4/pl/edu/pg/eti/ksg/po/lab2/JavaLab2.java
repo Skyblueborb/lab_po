@@ -3,6 +3,7 @@ package pl.edu.pg.eti.ksg.po.lab2;
 import java.util.HashSet;
 import java.util.Set;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Grupa;
+import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.SluchaczPostepow;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.SymulatorWycieczki;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Uczestnik;
 import pl.edu.pg.eti.ksg.po.lab2.symulatorwycieczki.Wycieczka;
@@ -36,6 +37,27 @@ public class JavaLab2 {
         Grupa g = new Grupa(przewodnik, uczestnicy);
 
         SymulatorWycieczki symulator = new SymulatorWycieczki(g, w);
+
+        symulator.addSluchaczPostepow((element, lp, liczba) -> {
+            int percent = (lp * 100) / liczba;
+            StringBuilder pasek = new StringBuilder("[");
+            for (int i = 0; i < 20; i++) {
+                if (i < (lp * 20) / liczba) {
+                    pasek.append("#");
+                } else {
+                    pasek.append("-");
+                }
+            }
+            pasek.append("] ")
+                .append(percent)
+                .append("% (")
+                .append(lp)
+                .append("/")
+                .append(liczba)
+                .append(") ")
+                .append(element.getNazwa());
+            System.out.println(pasek.toString());
+        });
 
         symulator.symuluj();
     }

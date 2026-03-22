@@ -13,10 +13,15 @@ public class SymulatorWycieczki {
     private int pozycjaGrupy = 0;
     private double czasWycieczki = 0.0;
     private double pokonanyDystans = 0.0;
+    private Set<SluchaczPostepow> sluchaczPostepow = new HashSet<>();
 
     public SymulatorWycieczki(Grupa grupa, Wycieczka wycieczka) {
         this.grupa = grupa;
         this.wycieczka = wycieczka;
+    }
+
+    public void addSluchaczPostepow(SluchaczPostepow sluchacz) {
+        sluchaczPostepow.add(sluchacz);
     }
 
     public void symuluj() {
@@ -87,6 +92,11 @@ public class SymulatorWycieczki {
 
                 System.out.println("Zwiedzanie atrakcji zajęło grupie " + czas + " h");
                 czasWycieczki += czas;
+            }
+
+            for (SluchaczPostepow sluchacz : sluchaczPostepow) {
+                sluchacz.aktualizujPostep(
+                    elementWycieczki, pozycjaGrupy + 1, wycieczka.getLiczbaElementowWycieczki());
             }
 
             System.out.println();
